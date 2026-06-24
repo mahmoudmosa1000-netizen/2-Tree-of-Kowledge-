@@ -590,7 +590,7 @@ function OllamaModal({url,model,onSave,onClose}){
 }
 
 // ─── Sidebar + AI Chat ───────────────────────────────────
-function Sidebar({p,onClose,lang,t,url,model,onConceptClick}){
+function Sidebar({p,onClose,lang,t,url,model,onConceptClick,onShare}){
   const [q,setQ]=useState(""); const [resp,setResp]=useState(""); const [loading,setLoading]=useState(false); const [err,setErr]=useState("");
   const [wikiImg,setWikiImg]=useState(null);
   const [copied,setCopied]=useState(false);
@@ -635,7 +635,9 @@ function Sidebar({p,onClose,lang,t,url,model,onConceptClick}){
           <h2 style={{fontFamily:"'Playfair Display',Georgia,serif",fontSize:24,fontWeight:900,color:"#F0E6D3",lineHeight:1.1}}>{p.name}</h2>
           <div style={{fontSize:11,color:"#3D5A3F",marginTop:3}}>{p.life}</div>
         </div>
-        <button onClick={onClose} style={{background:"none",border:"none",color:"#3D5A3F",fontSize:18,lineHeight:1}}>✕</button>
+        <div style={{display:"flex",gap:6,alignItems:"center"}}>
+        <button onClick={()=>onShare&&onShare(p.id)} title={lang==='ar'?'مشاركة':lang==='en'?'Share link':'Link teilen'} style={{background:"none",border:"none",color:"#3D5A3F",fontSize:16,lineHeight:1,cursor:"pointer"}}>🔗</button>
+        <button onClick={onClose} style={{background:"none",border:"none",color:"#3D5A3F",fontSize:18,lineHeight:1,cursor:"pointer"}}>✕</button>
       </div>
 
       {/* Wikipedia Portrait — click to fullscreen */}
@@ -707,7 +709,7 @@ function Sidebar({p,onClose,lang,t,url,model,onConceptClick}){
 }
 
 // ─── Header ──────────────────────────────────────────────
-function Header({lang,setLang,view,setView,particles,setParticles,onCfg,t,search,setSearch,views5,cFilter,setCFilter,studied,onDiscover}){
+function Header({lang,setLang,view,setView,particles,setParticles,onCfg,t,search,setSearch,views5,cFilter,setCFilter,studied,onDiscover,onDownload}){
   const btn=a=>({background:a?"rgba(201,162,39,.18)":"none",border:a?"1px solid rgba(201,162,39,.4)":"1px solid transparent",borderRadius:7,color:a?"#C9A227":"#2E4A30",padding:"6px 11px",fontSize:11});
   const ph_label=lang==="ar"?"ابحث عن فيلسوف…":lang==="en"?"Search philosopher…":"Philosoph suchen…";
   return(
@@ -725,6 +727,8 @@ function Header({lang,setLang,view,setView,particles,setParticles,onCfg,t,search
           <span style={{fontSize:11,color:studied.size>=PH.length?"#4ADE80":"#C9A227"}}>{"★".repeat(Math.min(5,Math.floor(studied.size/PH.length*5+.5)))}</span>
           <span>{studied.size}/{PH.length}</span>
         </div>
+        {/* Download this file */}
+        <button onClick={onDownload} title={lang==='ar'?'تنزيل':lang==='en'?'Download HTML':'HTML speichern'} style={{background:'rgba(255,255,255,.04)',border:'1px solid rgba(255,255,255,.1)',borderRadius:8,color:'#2E4A30',fontSize:14,padding:'5px 9px',lineHeight:1}}>⬇</button>
         {/* Random discover */}
         <button onClick={onDiscover} title={lang==="ar"?"اكتشف فيلسوفًا":lang==="en"?"Discover random":"Zufallsphilosoph"} style={{background:"rgba(255,255,255,.04)",border:"1px solid rgba(255,255,255,.1)",borderRadius:8,color:"#2E4A30",fontSize:15,padding:"5px 10px",lineHeight:1}}>🎲</button>
         {cFilter&&<button onClick={()=>setCFilter(null)} style={{background:"rgba(201,162,39,.15)",border:"1px solid rgba(201,162,39,.5)",borderRadius:8,color:"#C9A227",fontSize:11,padding:"6px 10px",display:"flex",alignItems:"center",gap:5}}><span>🔑</span><span style={{maxWidth:100,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{cFilter}</span><span style={{opacity:.6}}>✕</span></button>}
@@ -762,6 +766,16 @@ function App(){
   useEffect(()=>{localStorage.setItem("tok-model",model);},[model]);
 
   const ph=PHM[sel]; const t=T[lang];
+  const shareLink=(pid)=>{
+    const url=location.origin+location.pathname+'#philosopher='+pid;
+    navigator.clipboard.writeText(url).then(()=>showToast('🔗 Link kopiert!')).catch(()=>showToast('🔗 '+url));
+  };
+  const downloadSelf=()=>{
+    const blob=new Blob([document.documentElement.outerHTML],{type:'text/html;charset=utf-8'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+    a.download='tree-of-knowledge.html'; a.click(); URL.revokeObjectURL(a.href);
+    showToast('⬇ tree-of-knowledge.html gespeichert');
+  };
   const discoverRandom=()=>{
     const pool=PH.filter(p=>!studied.has(p.id));
     const pick=(pool.length>0?pool:PH)[Math.floor(Math.random()*((pool.length>0?pool:PH).length))];
@@ -786,6 +800,25 @@ function App(){
   const views5=[t.views[0],t.views[1],t.views[2],lang==="ar"?"🌌 الكون":lang==="en"?"🌌 Galaxy":"🌌 Galaxie",lang==="ar"?"🎮 اختبار":lang==="en"?"🎮 Quiz":"🎮 Quiz"];
 
 
+
+  // ─── Hash-Routing (teilbare Links) ─────────────────────────────────────────
+  useEffect(()=>{
+    const h=location.hash.replace('#','');
+    const p=new URLSearchParams(h);
+    const pid=p.get('philosopher');
+    if(pid&&PHM[pid]) setSel(pid);
+    const v=p.get('view');
+    if(v&&['tree','mindmap','timeline','galaxy','quiz'].includes(v)) setView(v);
+  },[]);
+
+  useEffect(()=>{
+    const params=new URLSearchParams();
+    if(sel) params.set('philosopher',sel);
+    if(view!=='tree') params.set('view',view);
+    const hash=params.toString();
+    history.replaceState(null,'',hash?'#'+hash:location.pathname);
+  },[sel,view]);
+
   // ─── Keyboard shortcuts ─────────────────────────────────────────────
   useEffect(()=>{
     const h=(e)=>{
@@ -805,7 +838,7 @@ function App(){
 
   return(
     <div style={{minHeight:"100vh",background:"radial-gradient(ellipse 100% 70% at 50% 100%,#0D2212 0%,#060B08 58%)",color:"#F0E6D3",overflow:"hidden"}}>
-      <Header lang={lang} setLang={setLang} view={view} setView={switchView} particles={particles} setParticles={setParticles} onCfg={()=>setShowCfg(true)} t={t} search={search} setSearch={setSearch} views5={views5} cFilter={conceptFilter} setCFilter={setConceptFilter} studied={studied} onDiscover={discoverRandom}/>
+      <Header lang={lang} setLang={setLang} view={view} setView={switchView} particles={particles} setParticles={setParticles} onCfg={()=>setShowCfg(true)} t={t} search={search} setSearch={setSearch} views5={views5} cFilter={conceptFilter} setCFilter={setConceptFilter} studied={studied} onDiscover={discoverRandom} onDownload={downloadSelf}/>
       <main style={{height:"calc(100vh - 56px)",paddingRight:ph?395:0,transition:"padding-right .32s cubic-bezier(.25,.46,.45,.94)",overflow:"hidden"}}>
         {view==="galaxy"  &&<div style={{width:"100%",height:"100%",padding:"4px 12px 0"}}><GalaxyView phs={PH} filtered={filtered} sel={sel} onSel={onSel}/></div>}
         {view==="quiz"    &&<div style={{width:"100%",height:"100%"}}><QuizView lang={lang}/></div>}
@@ -814,7 +847,7 @@ function App(){
         {view==="mindmap" &&<div style={{width:"100%",height:"100%",padding:"4px 12px 0"}}><MindMapView sel={sel} onSel={onSel}/></div>}
         {view==="timeline"&&<div style={{width:"100%",height:"100%"}}><TimelineView sel={sel} onSel={onSel} lang={lang} filtered={filtered}/></div>}
       </main>
-      {ph&&<Sidebar key={ph.id+"-"+lang} p={ph} onClose={()=>setSel(null)} lang={lang} t={t} url={url} model={model} onConceptClick={idea=>{setConceptFilter(idea);setSel(null);}}/>}
+      {ph&&<Sidebar key={ph.id+"-"+lang} p={ph} onClose={()=>setSel(null)} lang={lang} t={t} url={url} model={model} onConceptClick={idea=>{setConceptFilter(idea);setSel(null);}} onShare={shareLink}/>}
       {showCfg&&<OllamaModal url={url} model={model} onSave={(u,m)=>{setUrl(u);setModel(m);}} onClose={()=>setShowCfg(false)}/>}
       {toast&&(
         <div style={{position:"fixed",bottom:24,left:"50%",transform:"translateX(-50%)",
