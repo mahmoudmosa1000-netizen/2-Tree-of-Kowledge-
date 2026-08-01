@@ -721,7 +721,7 @@ canvas{display:block;position:fixed;inset:0}
 <body>
 <div class="noise-layer" aria-hidden="true"></div>
 <p class="sr-only">
-  Tree of Knowledge zeigt 38 Philosophen als interaktive 3D-Visualisierung. Diese Darstellung ist
+  Tree of Knowledge zeigt 43 Philosophen als interaktive 3D-Visualisierung. Diese Darstellung ist
   primär visuell. Nutze das Suchfeld oben (durchsucht Name, Epoche und Ideen) oder die
   Schnellzugriff-Punkte am linken Bildschirmrand, um einzelne Philosophen direkt und tastaturbedienbar
   zu erreichen — beide öffnen die Detailansicht mit vollständigem Text zu Biografie, Zitat und Werken.
@@ -879,7 +879,7 @@ canvas{display:block;position:fixed;inset:0}
 <!-- ══════════════ KNOWLEDGE GALAXY OVERLAY (unabhängig vom 3D-Baum) ══════════════ -->
 <div id="gx-overlay">
   <button id="gx-close" onclick="closeGalaxy()" title="Galaxy schließen (ESC)">✕</button>
-  <div id="gx-title">WISSENS-GALAXIE · 38 PHILOSOPHEN NACH EPOCHE GECLUSTERT</div>
+  <div id="gx-title">WISSENS-GALAXIE · 43 PHILOSOPHEN NACH EPOCHE GECLUSTERT</div>
   <input id="gx-search" type="text" placeholder="⌕ Philosoph suchen…" autocomplete="off"/>
   <svg id="gx-svg"></svg>
   <div id="gx-tooltip"></div>
@@ -924,7 +924,7 @@ canvas{display:block;position:fixed;inset:0}
 <!-- ══════════════ GEO-KARTE OVERLAY (unabhängig vom 3D-Baum) ══════════════ -->
 <div id="geo-overlay">
   <button id="geo-close" onclick="closeGeoMap()" title="Karte schließen (ESC)">✕</button>
-  <div id="geo-title">WIRKUNGSORTE · 38 PHILOSOPHEN AUF DER WELTKARTE</div>
+  <div id="geo-title">WIRKUNGSORTE · 43 PHILOSOPHEN AUF DER WELTKARTE</div>
   <div id="geo-map"></div>
   <div id="geo-legend"></div>
   <div id="geo-hint">Ziehen zum Verschieben<br/>Scrollen zum Zoomen</div>
@@ -2037,6 +2037,126 @@ const PH=[
     "works": [
       "Die permanente Revolution (1930)",
       "Verratene Revolution (1936)"
+    ]
+  },
+  {
+    "id": "thales",
+    "by": -624,
+    "name": "Thales von Milet",
+    "s": "Thales",
+    "life": "624–546 v.Chr.",
+    "era": "Vorsokratik",
+    "x": 680,
+    "y": 400,
+    "c": "#38BDF8",
+    "ideas": [
+      "Arche (Urstoff)",
+      "Wasser als Ursprung",
+      "Naturphilosophie",
+      "Rationale Welterklärung"
+    ],
+    "quote": "Alles ist aus Wasser.",
+    "inf": [],
+    "bio": "Thales gilt als erster Philosoph der westlichen Tradition: Er suchte nach einem natürlichen, nicht-mythologischen Urprinzip der Welt und fand es im Wasser.",
+    "bio_en": "Thales is considered the first Western philosopher, seeking a natural rather than mythological first principle of the world.",
+    "works": [
+      "Keine erhaltenen Schriften (überliefert durch spätere Autoren wie Aristoteles)"
+    ]
+  },
+  {
+    "id": "heraklit",
+    "by": -535,
+    "name": "Heraklit",
+    "s": "Heraklit",
+    "life": "535–475 v.Chr.",
+    "era": "Vorsokratik",
+    "x": 740,
+    "y": 410,
+    "c": "#38BDF8",
+    "ideas": [
+      "Panta rhei (Alles fließt)",
+      "Logos",
+      "Einheit der Gegensätze",
+      "Werden statt Sein"
+    ],
+    "quote": "Alles fließt.",
+    "inf": [],
+    "bio": "Heraklit lehrte, dass beständiger Wandel das Grundprinzip der Wirklichkeit ist – eine Idee, die über zwei Jahrtausende später in Hegels Dialektik wiederkehrt.",
+    "bio_en": "Heraclitus taught that constant change is the fundamental principle of reality, an idea echoed two millennia later in Hegelian dialectics.",
+    "works": [
+      "Peri Physeos / Über die Natur (nur Fragmente erhalten)"
+    ]
+  },
+  {
+    "id": "laotse",
+    "by": -604,
+    "name": "Laotse",
+    "s": "Laotse",
+    "life": "6. Jh. v.Chr. (traditionell)",
+    "era": "Ostasien",
+    "x": 920,
+    "y": 395,
+    "c": "#FCD34D",
+    "ideas": [
+      "Tao",
+      "Wu Wei",
+      "Yin und Yang",
+      "Einfachheit"
+    ],
+    "quote": "Ein Weg von tausend Meilen beginnt mit dem ersten Schritt.",
+    "inf": [],
+    "bio": "Laotse gilt als Begründer des Daoismus. Zentral ist das Tao – das nicht in Worte zu fassende Prinzip hinter allem – und das Ideal des mühelosen Handelns (Wu Wei).",
+    "bio_en": "Laozi is considered the founder of Daoism, centered on the Tao and the ideal of effortless action (Wu Wei).",
+    "works": [
+      "Tao Te King (Daodejing)"
+    ]
+  },
+  {
+    "id": "buddha",
+    "by": -563,
+    "name": "Siddhartha Gautama",
+    "s": "Buddha",
+    "life": "563–483 v.Chr. (traditionell)",
+    "era": "Südasien",
+    "x": 980,
+    "y": 370,
+    "c": "#38BDF8",
+    "ideas": [
+      "Vier edle Wahrheiten",
+      "Achtfacher Pfad",
+      "Nicht-Selbst (Anatta)",
+      "Erleuchtung (Nirvana)"
+    ],
+    "quote": "Es gibt keinen Weg zum Glück. Glücklichsein ist der Weg.",
+    "inf": [],
+    "bio": "Siddhartha Gautama erkannte unter dem Bodhi-Baum die Ursachen des Leidens und lehrte einen Weg zur Befreiung davon. Seine Lehre wurde zur Grundlage des Buddhismus.",
+    "bio_en": "Siddhartha Gautama identified the causes of suffering and taught a path to liberation from it, forming the basis of Buddhism.",
+    "works": [
+      "Keine eigenen Schriften (überliefert durch mündliche Tradition, später Pali-Kanon)"
+    ]
+  },
+  {
+    "id": "zarathustra",
+    "by": -1000,
+    "name": "Zarathustra",
+    "s": "Zarathustra",
+    "life": "Datierung unsicher, ca. 2./1. Jt. v.Chr.",
+    "era": "Alter Orient",
+    "x": 610,
+    "y": 390,
+    "c": "#A3E635",
+    "ideas": [
+      "Dualismus (Gut/Böse)",
+      "Freier Wille",
+      "Asha (Wahrheit/Ordnung)",
+      "Monotheismus (Ahura Mazda)"
+    ],
+    "quote": "Gute Gedanken, gute Worte, gute Taten.",
+    "inf": [],
+    "bio": "Zarathustra begründete eine der ältesten monotheistischen Religionen mit einem klaren ethischen Dualismus zwischen Gut und Böse – ein Gedanke, der später Judentum, Christentum und Islam beeinflusste.",
+    "bio_en": "Zoroaster founded one of the oldest monotheistic religions with a clear ethical dualism between good and evil, later influencing Judaism, Christianity and Islam.",
+    "works": [
+      "Gathas (älteste Teile des Avesta)"
     ]
   }
 ];
@@ -4443,10 +4563,15 @@ document.addEventListener('keydown', e=>{
 
 
 // ─── GEO-KARTE ────────────────────────────────────────────────────────────
-// Geburts-/Wirkungsorte aller 38 Philosophen. Eigenständiges Overlay via
+// Geburts-/Wirkungsorte aller 43 Philosophen. Eigenständiges Overlay via
 // Leaflet + OpenStreetMap (kostenlos, kein API-Key nötig), beeinflusst die
 // 3D-Baum-Szene nicht.
 const GEO_PLACES = {
+  thales:         {lat:37.5297, lng:27.2783, place:'Milet, Kleinasien (heute Türkei)'},
+  heraklit:       {lat:37.9497, lng:27.3639, place:'Ephesos, Kleinasien (heute Türkei)'},
+  laotse:         {lat:33.6000, lng:112.5000, place:'Chu-Reich (heute Henan, China)'},
+  buddha:         {lat:27.4833, lng:83.2767, place:'Lumbini (heute Nepal)'},
+  zarathustra:    {lat:36.7562, lng:66.8983, place:'Baktrien (heute Balch, Afghanistan) — traditionelle Zuschreibung'},
   weber:          {lat:49.3988, lng:8.6724,  place:'Heidelberg, Deutschland'},
   luxemburg:      {lat:52.5200, lng:13.4050, place:'Berlin, Deutschland'},
   trotzki:        {lat:55.7558, lng:37.6173, place:'Moskau, Russland'},
@@ -4568,7 +4693,7 @@ document.addEventListener('keydown', e=>{
 
 
 // ─── KI-WISSENSGRAPH (Ollama-Embeddings) ─────────────────────────────────
-// Berechnet semantische Ähnlichkeit zwischen allen 38 Philosophen lokal via
+// Berechnet semantische Ähnlichkeit zwischen allen 43 Philosophen lokal via
 // Ollama /api/embeddings (z.B. Modell "nomic-embed-text"). Kein OpenAI-Key
 // nötig. Ergebnis wird in localStorage gecacht. Eigenständiges Overlay,
 // beeinflusst die 3D-Baum-Szene nicht.
@@ -4608,7 +4733,7 @@ async function kgRun(){
   const track=document.getElementById('kg-progress-track');
   runBtn.disabled=true; runBtn.style.opacity='0.5';
   errBox.style.display='none';
-  status.textContent = 'Berechne Embeddings für 38 Philosophen…';
+  status.textContent = 'Berechne Embeddings für 43 Philosophen…';
 
   try{
     const embeddings=[];
