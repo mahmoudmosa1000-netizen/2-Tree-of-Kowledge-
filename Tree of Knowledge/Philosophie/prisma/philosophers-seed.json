@@ -1152,5 +1152,105 @@
     "works": [
       "Gathas (älteste Teile des Avesta)"
     ]
+  },
+  {
+    "id": "bentham",
+    "by": 1748,
+    "name": "Jeremy Bentham",
+    "s": "Bentham",
+    "life": "1748–1832",
+    "era": "Utilitarismus",
+    "x": 700,
+    "y": 190,
+    "c": "#FDE047",
+    "ideas": [
+      "Nutzenprinzip",
+      "Hedonistischer Kalkül",
+      "Utilitarismus",
+      "Gesetzesreform"
+    ],
+    "quote": "Das größte Glück der größten Zahl ist das Maß von Recht und Unrecht.",
+    "inf": [
+      "mill"
+    ],
+    "bio": "Bentham begründete den Utilitarismus: Eine Handlung ist richtig, wenn sie den größten Nutzen für die größte Zahl an Menschen erzeugt – berechenbar wie eine Rechnung.",
+    "bio_en": "Bentham founded utilitarianism: an action is right if it produces the greatest good for the greatest number.",
+    "works": [
+      "Eine Einführung in die Prinzipien der Moral und Gesetzgebung (1789)"
+    ]
+  },
+  {
+    "id": "mill",
+    "by": 1806,
+    "name": "John Stuart Mill",
+    "s": "Mill",
+    "life": "1806–1873",
+    "era": "Utilitarismus",
+    "x": 750,
+    "y": 210,
+    "c": "#FDE047",
+    "ideas": [
+      "Freiheitsprinzip (Schadensprinzip)",
+      "Qualitativer Utilitarismus",
+      "Individualität",
+      "Frauenrechte"
+    ],
+    "quote": "Über seinen eigenen Körper und Geist ist das Individuum souverän.",
+    "inf": [],
+    "bio": "Mill verfeinerte Benthams Utilitarismus um qualitative Unterschiede zwischen Freuden und wurde zu einem der einflussreichsten Verteidiger individueller Freiheit.",
+    "bio_en": "Mill refined Bentham utilitarianism with qualitative distinctions between pleasures and became a leading defender of individual liberty.",
+    "works": [
+      "Über die Freiheit (1859)",
+      "Der Utilitarismus (1863)"
+    ]
+  },
+  {
+    "id": "burke",
+    "by": 1729,
+    "name": "Edmund Burke",
+    "s": "Burke",
+    "life": "1729–1797",
+    "era": "Konservatismus",
+    "x": 600,
+    "y": 180,
+    "c": "#94A3B8",
+    "ideas": [
+      "Tradition und Kontinuität",
+      "Organische Gesellschaft",
+      "Skepsis gegenüber Revolution",
+      "Common Law"
+    ],
+    "quote": "Die Gesellschaft ist eine Partnerschaft nicht nur zwischen den Lebenden, sondern zwischen den Lebenden, den Toten und den Ungeborenen.",
+    "inf": [],
+    "bio": "Burke gilt als Begründer des modernen Konservatismus. Er verteidigte gewachsene Traditionen gegen abstrakte Revolutionsideale und warnte vor den Folgen der Französischen Revolution.",
+    "bio_en": "Burke is considered the founder of modern conservatism, defending organic tradition against abstract revolutionary ideals.",
+    "works": [
+      "Betrachtungen über die Französische Revolution (1790)"
+    ]
+  },
+  {
+    "id": "bakunin",
+    "by": 1814,
+    "name": "Michail Bakunin",
+    "s": "Bakunin",
+    "life": "1814–1876",
+    "era": "Anarchismus",
+    "x": 380,
+    "y": 200,
+    "c": "#F43F5E",
+    "ideas": [
+      "Kollektivistischer Anarchismus",
+      "Antiautoritarismus",
+      "Staatsablehnung",
+      "Föderalismus"
+    ],
+    "quote": "Die Freiheit anderer ist nicht die Grenze der meinigen, sondern deren notwendige Bedingung.",
+    "inf": [],
+    "bio": "Bakunin lehnte jede Form von Staatsmacht ab – auch die von Marx anvisierte Diktatur des Proletariats. Sein Streit mit Marx spaltete die sozialistische Bewegung des 19. Jahrhunderts.",
+    "bio_en": "Bakunin rejected all forms of state power, including the proletarian dictatorship envisioned by Marx. His dispute with Marx split the 19th-century socialist movement.",
+    "works": [
+      "Gott und der Staat (1882, postum)",
+      "Staatlichkeit und Anarchie (1873)"
+    ]
   }
 ]

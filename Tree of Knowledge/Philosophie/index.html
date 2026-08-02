@@ -721,7 +721,7 @@ canvas{display:block;position:fixed;inset:0}
 <body>
 <div class="noise-layer" aria-hidden="true"></div>
 <p class="sr-only">
-  Tree of Knowledge zeigt 43 Philosophen als interaktive 3D-Visualisierung. Diese Darstellung ist
+  Tree of Knowledge zeigt 47 Philosophen als interaktive 3D-Visualisierung. Diese Darstellung ist
   primär visuell. Nutze das Suchfeld oben (durchsucht Name, Epoche und Ideen) oder die
   Schnellzugriff-Punkte am linken Bildschirmrand, um einzelne Philosophen direkt und tastaturbedienbar
   zu erreichen — beide öffnen die Detailansicht mit vollständigem Text zu Biografie, Zitat und Werken.
@@ -879,7 +879,7 @@ canvas{display:block;position:fixed;inset:0}
 <!-- ══════════════ KNOWLEDGE GALAXY OVERLAY (unabhängig vom 3D-Baum) ══════════════ -->
 <div id="gx-overlay">
   <button id="gx-close" onclick="closeGalaxy()" title="Galaxy schließen (ESC)">✕</button>
-  <div id="gx-title">WISSENS-GALAXIE · 43 PHILOSOPHEN NACH EPOCHE GECLUSTERT</div>
+  <div id="gx-title">WISSENS-GALAXIE · 47 PHILOSOPHEN NACH EPOCHE GECLUSTERT</div>
   <input id="gx-search" type="text" placeholder="⌕ Philosoph suchen…" autocomplete="off"/>
   <svg id="gx-svg"></svg>
   <div id="gx-tooltip"></div>
@@ -924,7 +924,7 @@ canvas{display:block;position:fixed;inset:0}
 <!-- ══════════════ GEO-KARTE OVERLAY (unabhängig vom 3D-Baum) ══════════════ -->
 <div id="geo-overlay">
   <button id="geo-close" onclick="closeGeoMap()" title="Karte schließen (ESC)">✕</button>
-  <div id="geo-title">WIRKUNGSORTE · 43 PHILOSOPHEN AUF DER WELTKARTE</div>
+  <div id="geo-title">WIRKUNGSORTE · 47 PHILOSOPHEN AUF DER WELTKARTE</div>
   <div id="geo-map"></div>
   <div id="geo-legend"></div>
   <div id="geo-hint">Ziehen zum Verschieben<br/>Scrollen zum Zoomen</div>
@@ -2157,6 +2157,106 @@ const PH=[
     "bio_en": "Zoroaster founded one of the oldest monotheistic religions with a clear ethical dualism between good and evil, later influencing Judaism, Christianity and Islam.",
     "works": [
       "Gathas (älteste Teile des Avesta)"
+    ]
+  },
+  {
+    "id": "bentham",
+    "by": 1748,
+    "name": "Jeremy Bentham",
+    "s": "Bentham",
+    "life": "1748–1832",
+    "era": "Utilitarismus",
+    "x": 700,
+    "y": 190,
+    "c": "#FDE047",
+    "ideas": [
+      "Nutzenprinzip",
+      "Hedonistischer Kalkül",
+      "Utilitarismus",
+      "Gesetzesreform"
+    ],
+    "quote": "Das größte Glück der größten Zahl ist das Maß von Recht und Unrecht.",
+    "inf": [
+      "mill"
+    ],
+    "bio": "Bentham begründete den Utilitarismus: Eine Handlung ist richtig, wenn sie den größten Nutzen für die größte Zahl an Menschen erzeugt – berechenbar wie eine Rechnung.",
+    "bio_en": "Bentham founded utilitarianism: an action is right if it produces the greatest good for the greatest number.",
+    "works": [
+      "Eine Einführung in die Prinzipien der Moral und Gesetzgebung (1789)"
+    ]
+  },
+  {
+    "id": "mill",
+    "by": 1806,
+    "name": "John Stuart Mill",
+    "s": "Mill",
+    "life": "1806–1873",
+    "era": "Utilitarismus",
+    "x": 750,
+    "y": 210,
+    "c": "#FDE047",
+    "ideas": [
+      "Freiheitsprinzip (Schadensprinzip)",
+      "Qualitativer Utilitarismus",
+      "Individualität",
+      "Frauenrechte"
+    ],
+    "quote": "Über seinen eigenen Körper und Geist ist das Individuum souverän.",
+    "inf": [],
+    "bio": "Mill verfeinerte Benthams Utilitarismus um qualitative Unterschiede zwischen Freuden und wurde zu einem der einflussreichsten Verteidiger individueller Freiheit.",
+    "bio_en": "Mill refined Bentham utilitarianism with qualitative distinctions between pleasures and became a leading defender of individual liberty.",
+    "works": [
+      "Über die Freiheit (1859)",
+      "Der Utilitarismus (1863)"
+    ]
+  },
+  {
+    "id": "burke",
+    "by": 1729,
+    "name": "Edmund Burke",
+    "s": "Burke",
+    "life": "1729–1797",
+    "era": "Konservatismus",
+    "x": 600,
+    "y": 180,
+    "c": "#94A3B8",
+    "ideas": [
+      "Tradition und Kontinuität",
+      "Organische Gesellschaft",
+      "Skepsis gegenüber Revolution",
+      "Common Law"
+    ],
+    "quote": "Die Gesellschaft ist eine Partnerschaft nicht nur zwischen den Lebenden, sondern zwischen den Lebenden, den Toten und den Ungeborenen.",
+    "inf": [],
+    "bio": "Burke gilt als Begründer des modernen Konservatismus. Er verteidigte gewachsene Traditionen gegen abstrakte Revolutionsideale und warnte vor den Folgen der Französischen Revolution.",
+    "bio_en": "Burke is considered the founder of modern conservatism, defending organic tradition against abstract revolutionary ideals.",
+    "works": [
+      "Betrachtungen über die Französische Revolution (1790)"
+    ]
+  },
+  {
+    "id": "bakunin",
+    "by": 1814,
+    "name": "Michail Bakunin",
+    "s": "Bakunin",
+    "life": "1814–1876",
+    "era": "Anarchismus",
+    "x": 380,
+    "y": 200,
+    "c": "#F43F5E",
+    "ideas": [
+      "Kollektivistischer Anarchismus",
+      "Antiautoritarismus",
+      "Staatsablehnung",
+      "Föderalismus"
+    ],
+    "quote": "Die Freiheit anderer ist nicht die Grenze der meinigen, sondern deren notwendige Bedingung.",
+    "inf": [],
+    "bio": "Bakunin lehnte jede Form von Staatsmacht ab – auch die von Marx anvisierte Diktatur des Proletariats. Sein Streit mit Marx spaltete die sozialistische Bewegung des 19. Jahrhunderts.",
+    "bio_en": "Bakunin rejected all forms of state power, including the proletarian dictatorship envisioned by Marx. His dispute with Marx split the 19th-century socialist movement.",
+    "works": [
+      "Gott und der Staat (1882, postum)",
+      "Staatlichkeit und Anarchie (1873)"
     ]
   }
 ];
@@ -3394,7 +3494,7 @@ document.querySelectorAll('#cmp-toggle, #header-bar .hbtn[onclick^="discoverRand
 
 
 // ─── STAMMBAUM DER SCHULEN ────────────────────────────────────────────────────
-const SCHOOLS = [{"id": "antike-ethik", "name": "Antike Ethik", "parent": null, "founders": ["sokrates", "platon", "aristoteles"], "year": -400, "category": "philosophisch", "desc": "Grundlage der westlichen Philosophie: Fragen nach dem guten Leben, Tugend und sicherem Wissen."}, {"id": "scholastik", "name": "Scholastik", "parent": "antike-ethik", "founders": ["augustinus", "thomas"], "year": 1250, "category": "religi\u00f6s", "desc": "Verband christlichen Glauben mit aristotelischer Logik im europ\u00e4ischen Mittelalter."}, {"id": "falsafa", "name": "Falsafa", "parent": "antike-ethik", "founders": ["ibnSina", "ibnrushd"], "year": 1000, "category": "religi\u00f6s", "desc": "Bewahrte und erweiterte antikes Wissen in der islamischen Welt und vermittelte es sp\u00e4ter nach Europa."}, {"id": "rationalismus", "name": "Rationalismus", "parent": null, "founders": ["descartes", "spinoza", "leibniz"], "year": 1640, "category": "philosophisch", "desc": "Vernunft statt Sinneserfahrung gilt als Quelle sicheren Wissens."}, {"id": "phaenomenologie", "name": "Ph\u00e4nomenologie", "parent": "rationalismus", "founders": ["husserl"], "year": 1900, "category": "philosophisch", "desc": "Untersucht Bewusstseinserlebnisse 'an sich', bevor Theorien dar\u00fcber gebildet werden."}, {"id": "aufklaerung", "name": "Aufkl\u00e4rung", "parent": "rationalismus", "founders": ["voltaire", "rousseau", "kant"], "year": 1750, "category": "politisch", "desc": "Vernunft, Kritik an Autorit\u00e4t und Tradition, Ideal der Selbstbestimmung des Menschen."}, {"id": "idealismus", "name": "Deutscher Idealismus", "parent": "aufklaerung", "founders": ["kant", "hegel"], "year": 1790, "category": "philosophisch", "desc": "Die Wirklichkeit wird durch den denkenden Geist bzw. das Bewusstsein strukturiert."}, {"id": "marxismus", "name": "Marxismus", "parent": "idealismus", "founders": ["marx"], "year": 1848, "category": "wirtschaftlich", "desc": "Historischer Materialismus: nicht Ideen, sondern wirtschaftliche Verh\u00e4ltnisse und Klassenkampf treiben die Geschichte."}, {"id": "raetekommunismus", "name": "R\u00e4tekommunismus", "parent": "marxismus", "founders": ["luxemburg"], "year": 1913, "category": "politisch", "desc": "Betont spontane Massenbewegungen statt Parteidiktatur als Weg zum Sozialismus."}, {"id": "trotzkismus", "name": "Trotzkismus", "parent": "marxismus", "founders": ["trotzki"], "year": 1930, "category": "politisch", "desc": "Fordert permanente, weltweite Revolution statt 'Sozialismus in einem Land'."}, {"id": "existenzialismus", "name": "Existenzialismus", "parent": "idealismus", "founders": ["kierkegaard"], "year": 1843, "category": "philosophisch", "desc": "Die Existenz des Einzelnen geht jeder abstrakten Idee voraus \u2013 radikale Freiheit und Verantwortung."}, {"id": "atheist-existenzialismus", "name": "Atheistischer Existenzialismus", "parent": "existenzialismus", "founders": ["sartre", "camus", "beauvoir"], "year": 1943, "category": "philosophisch", "desc": "Ohne Gott ist der Mensch 'zur Freiheit verdammt' und muss sich selbst durch Taten definieren."}, {"id": "empirismus", "name": "Empirismus", "parent": null, "founders": ["locke", "hume"], "year": 1690, "category": "philosophisch", "desc": "Alles Wissen entspringt der Erfahrung, nicht angeborenen Ideen."}, {"id": "liberalismus", "name": "Liberalismus", "parent": "empirismus", "founders": ["locke"], "year": 1689, "category": "wirtschaftlich", "desc": "Individuelle Freiheit, Eigentum und begrenzte Staatsmacht als politische und wirtschaftliche Grundwerte."}, {"id": "soziologie", "name": "Verstehende Soziologie", "parent": "empirismus", "founders": ["weber"], "year": 1904, "category": "wirtschaftlich", "desc": "Erkl\u00e4rt gesellschaftliches Handeln durch das Verstehen des subjektiven Sinns, den Menschen ihm geben."}];
+const SCHOOLS = [{"id":"vorsokratik","name":"Vorsokratik","parent":null,"founders":["thales","heraklit"],"year":-600,"category":"philosophisch","desc":"Die ersten griechischen Denker suchten nach einem natürlichen Grundprinzip der Welt, bevor Sokrates den Blick auf Ethik und den Menschen selbst lenkte."},{"id":"daoismus","name":"Daoismus","parent":null,"founders":["laotse"],"year":-600,"category":"religiös","desc":"Lehrt Einklang mit dem Tao – dem namenlosen Prinzip hinter allem Sein – durch müheloses, natürliches Handeln (Wu Wei)."},{"id":"buddhismus","name":"Buddhismus","parent":null,"founders":["buddha"],"year":-560,"category":"religiös","desc":"Sucht die Befreiung vom Leiden durch Erkenntnis seiner Ursachen und einen ethisch-meditativen Übungsweg."},{"id":"zoroastrismus","name":"Zoroastrismus","parent":null,"founders":["zarathustra"],"year":-1000,"category":"religiös","desc":"Eine der ältesten monotheistischen Religionen mit klarem ethischem Dualismus zwischen Gut und Böse."},{"id":"konfuzianismus","name":"Konfuzianismus","parent":null,"founders":["konfuzius"],"year":-500,"category":"religiös","desc":"Eine Ethik gesellschaftlicher Ordnung durch Tugend, Ritual und richtige Beziehungen – prägte Ostasien über zwei Jahrtausende."},{"id":"antike-ethik","name":"Antike Ethik","parent":"vorsokratik","founders":["sokrates","platon","aristoteles"],"year":-400,"category":"philosophisch","desc":"Grundlage der westlichen Philosophie: Fragen nach dem guten Leben, Tugend und sicherem Wissen."},{"id":"patristik","name":"Patristik","parent":"antike-ethik","founders":["augustinus"],"year":400,"category":"religiös","desc":"Frühchristliche Kirchenväter verbanden den neuen Glauben mit antiker Philosophie – vor allem Augustinus verschmolz Platonismus und Christentum."},{"id":"scholastik","name":"Scholastik","parent":"patristik","founders":["thomas"],"year":1250,"category":"religiös","desc":"Verband christlichen Glauben mit aristotelischer Logik, die über die islamische Philosophie (Falsafa) neu nach Europa gelangte."},{"id":"falsafa","name":"Falsafa","parent":"antike-ethik","founders":["ibnSina","ibnrushd"],"year":1000,"category":"religiös","desc":"Bewahrte und erweiterte antikes Wissen in der islamischen Welt und vermittelte es später nach Europa."},{"id":"rationalismus","name":"Rationalismus","parent":null,"founders":["descartes","spinoza","leibniz"],"year":1640,"category":"philosophisch","desc":"Vernunft statt Sinneserfahrung gilt als Quelle sicheren Wissens."},{"id":"phaenomenologie","name":"Phänomenologie","parent":"rationalismus","founders":["husserl"],"year":1900,"category":"philosophisch","desc":"Untersucht Bewusstseinserlebnisse 'an sich', bevor Theorien darüber gebildet werden."},{"id":"aufklaerung","name":"Aufklärung","parent":"rationalismus","founders":["voltaire","rousseau","kant"],"year":1750,"category":"politisch","desc":"Vernunft, Kritik an Autorität und Tradition, Ideal der Selbstbestimmung des Menschen."},{"id":"idealismus","name":"Deutscher Idealismus","parent":"aufklaerung","founders":["kant","hegel"],"year":1790,"category":"philosophisch","desc":"Die Wirklichkeit wird durch den denkenden Geist bzw. das Bewusstsein strukturiert."},{"id":"marxismus","name":"Marxismus","parent":"idealismus","founders":["marx"],"year":1848,"category":"wirtschaftlich","desc":"Historischer Materialismus: nicht Ideen, sondern wirtschaftliche Verhältnisse und Klassenkampf treiben die Geschichte."},{"id":"raetekommunismus","name":"Rätekommunismus","parent":"marxismus","founders":["luxemburg"],"year":1913,"category":"politisch","desc":"Betont spontane Massenbewegungen statt Parteidiktatur als Weg zum Sozialismus."},{"id":"trotzkismus","name":"Trotzkismus","parent":"marxismus","founders":["trotzki"],"year":1930,"category":"politisch","desc":"Fordert permanente, weltweite Revolution statt 'Sozialismus in einem Land'."},{"id":"existenzialismus","name":"Existenzialismus","parent":"idealismus","founders":["kierkegaard"],"year":1843,"category":"philosophisch","desc":"Die Existenz des Einzelnen geht jeder abstrakten Idee voraus – radikale Freiheit und Verantwortung."},{"id":"atheist-existenzialismus","name":"Atheistischer Existenzialismus","parent":"existenzialismus","founders":["sartre","camus","beauvoir"],"year":1943,"category":"philosophisch","desc":"Ohne Gott ist der Mensch 'zur Freiheit verdammt' und muss sich selbst durch Taten definieren."},{"id":"empirismus","name":"Empirismus","parent":null,"founders":["locke","hume"],"year":1690,"category":"philosophisch","desc":"Alles Wissen entspringt der Erfahrung, nicht angeborenen Ideen."},{"id":"liberalismus","name":"Liberalismus","parent":"empirismus","founders":["locke"],"year":1689,"category":"wirtschaftlich","desc":"Individuelle Freiheit, Eigentum und begrenzte Staatsmacht als politische und wirtschaftliche Grundwerte."},{"id":"soziologie","name":"Verstehende Soziologie","parent":"empirismus","founders":["weber"],"year":1904,"category":"wirtschaftlich","desc":"Erklärt gesellschaftliches Handeln durch das Verstehen des subjektiven Sinns, den Menschen ihm geben."},{"id":"utilitarismus","name":"Utilitarismus","parent":"empirismus","founders":["bentham","mill"],"year":1789,"category":"wirtschaftlich","desc":"Eine Handlung ist moralisch richtig, wenn sie den größten Nutzen (das größte Glück) für die größte Zahl an Menschen erzeugt."},{"id":"konservatismus","name":"Konservatismus","parent":null,"founders":["burke"],"year":1790,"category":"politisch","desc":"Verteidigt gewachsene Traditionen, Institutionen und schrittweisen Wandel gegen abstrakte, revolutionäre Neuordnung der Gesellschaft."},{"id":"anarchismus","name":"Anarchismus","parent":"aufklaerung","founders":["bakunin"],"year":1868,"category":"politisch","desc":"Lehnt jede Form von Staatsmacht und Hierarchie ab – auch die von Marx anvisierte Diktatur des Proletariats – zugunsten freier, föderaler Selbstorganisation."}];
 const SC_CAT_COLORS = { philosophisch:'#96CDFF', wirtschaftlich:'#FFBE78', politisch:'#7BAE6E', religiös:'#E879F9' };
 const SCM = Object.fromEntries(SCHOOLS.map(s=>[s.id,s]));
 let scLayout = null, scActiveId = null, scTransform = {x:0,y:0,k:1};
@@ -4563,10 +4663,14 @@ document.addEventListener('keydown', e=>{
 
 
 // ─── GEO-KARTE ────────────────────────────────────────────────────────────
-// Geburts-/Wirkungsorte aller 43 Philosophen. Eigenständiges Overlay via
+// Geburts-/Wirkungsorte aller 47 Philosophen. Eigenständiges Overlay via
 // Leaflet + OpenStreetMap (kostenlos, kein API-Key nötig), beeinflusst die
 // 3D-Baum-Szene nicht.
 const GEO_PLACES = {
+  bentham:        {lat:51.5072, lng:-0.1276, place:'London, England'},
+  mill:           {lat:51.5072, lng:-0.1276, place:'London, England'},
+  burke:          {lat:53.3498, lng:-6.2603, place:'Dublin, Irland'},
+  bakunin:        {lat:56.3269, lng:44.0059, place:'Torschok, Russland'},
   thales:         {lat:37.5297, lng:27.2783, place:'Milet, Kleinasien (heute Türkei)'},
   heraklit:       {lat:37.9497, lng:27.3639, place:'Ephesos, Kleinasien (heute Türkei)'},
   laotse:         {lat:33.6000, lng:112.5000, place:'Chu-Reich (heute Henan, China)'},
@@ -4693,7 +4797,7 @@ document.addEventListener('keydown', e=>{
 
 
 // ─── KI-WISSENSGRAPH (Ollama-Embeddings) ─────────────────────────────────
-// Berechnet semantische Ähnlichkeit zwischen allen 43 Philosophen lokal via
+// Berechnet semantische Ähnlichkeit zwischen allen 47 Philosophen lokal via
 // Ollama /api/embeddings (z.B. Modell "nomic-embed-text"). Kein OpenAI-Key
 // nötig. Ergebnis wird in localStorage gecacht. Eigenständiges Overlay,
 // beeinflusst die 3D-Baum-Szene nicht.
@@ -4733,7 +4837,7 @@ async function kgRun(){
   const track=document.getElementById('kg-progress-track');
   runBtn.disabled=true; runBtn.style.opacity='0.5';
   errBox.style.display='none';
-  status.textContent = 'Berechne Embeddings für 43 Philosophen…';
+  status.textContent = 'Berechne Embeddings für 47 Philosophen…';
 
   try{
     const embeddings=[];
